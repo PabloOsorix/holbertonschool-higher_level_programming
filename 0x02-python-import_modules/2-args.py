@@ -6,7 +6,7 @@ if __name__ == "__main__":
         if len(sys.argv) == 1:
             print(f"{i} arguments.")
         if i == 0:
-           continue
+            continue
 
         if len(sys.argv) == 2:
             if count == 0:
