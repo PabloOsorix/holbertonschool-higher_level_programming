@@ -11,6 +11,6 @@ if __name__ == "__main__":
            continue
         if len(sys.argv) > 1:
             if count == 0:
-                print(f"{len(sys.argv) - 1} arguments")
+                print(f"{len(sys.argv) - 1} arguments:")
         print(f"{i}: {sys.argv[i]}")
         count = 1
