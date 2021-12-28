@@ -4,10 +4,10 @@ if __name__ == "__main__":
     a = 10 
     b = 5
     result = add(a, b)
-    print("{:d} + {:d} = {result}")
+    print("{:d} + {:d} = {result}".format(a, b, result))
     result = sub(a, b)
-    print("{:d} + {:d} = {result}")
+    print("{:d} - {:d} = {result}".format(a, b, result))
     result = mul(a, b)
-    print("{:d} + {:d} = {result}")
+    print("{:d} * {:d} = {result}".format(a, b, result))
     result = div(a, b)
-    print("{:d} + {:d} = {result}")
+    print("{:d} / {:d} = {result}".format(a, b, result))
