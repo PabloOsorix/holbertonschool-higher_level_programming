@@ -2,7 +2,7 @@
 
 
 def add_tuple(tuple_a=(), tuple_b=()):
-    tuple_c = (0,0)
+    tuple_c = (0, 0)
     tuple_a = tuple_a + tuple_c
     tuple_b = tuple_b + tuple_c
 
