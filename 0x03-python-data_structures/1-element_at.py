@@ -9,7 +9,6 @@ def element_at(my_list, idx):
             if counter == idx:
                 print("Element at index {:d} is {:d}".format(idx, i))
                 print("{:d}}".format(counter))
-                break
             counter += 1
     else:
         return None
