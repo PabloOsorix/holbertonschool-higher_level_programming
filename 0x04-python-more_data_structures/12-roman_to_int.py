@@ -3,8 +3,9 @@
 
 def roman_to_int(roman_string):
 
-    if roman_string is None:
+    if roman_string is None or type(roman_string) is not str :
         return 0
+    roman_string = roman_string.upper()
     roman_number = {"I": 1, "IV": 4, "V": 5, "IX": 9, "X": 10,
                     "XL": 40, "L": 50, "XC": 90, "C": 100, "CD": 400,
                     "D": 500, "CM": 900, "M": 1000}
@@ -40,3 +41,6 @@ def roman_to_int(roman_string):
         if roman_number.get(roman_string[i]) is not None and counter_two == 0:
             counter += roman_number.get(roman_string[i])
     return counter
+
+roman_number = 312312
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
