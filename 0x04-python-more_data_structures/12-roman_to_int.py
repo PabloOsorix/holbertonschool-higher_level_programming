@@ -3,9 +3,8 @@
 
 def roman_to_int(roman_string):
 
-    if roman_string is None or type(roman_string) is not str\
-                or roman_string.isalpha() is False:
-        return 0
+    if isinstance(roman_string, str) is False or roman_string is None:
+        return(0)
     roman_string = roman_string.upper()
     roman_number = {"I": 1, "IV": 4, "V": 5, "IX": 9, "X": 10,
                     "XL": 40, "L": 50, "XC": 90, "C": 100, "CD": 400,
