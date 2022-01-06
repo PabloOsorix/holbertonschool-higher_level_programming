@@ -11,7 +11,7 @@ def roman_to_int(roman_string):
                     "D": 500, "CM": 900, "M": 1000}
     counter = 0
     counter_two = 0
-    for i in range(len(roman_string)):
+    for i in range(len(roman_string) - 1):
         if i + 1 < len(roman_string):
             counter_two = 0
             if roman_string[i] == 'I' and roman_string[i + 1] == 'V':
