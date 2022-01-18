@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 
 
-def rraise_exception():
+def raise_exception():
     raise TypeError
