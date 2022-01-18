@@ -5,4 +5,7 @@ from typing import Type
 
 
 def raise_exception():
-    raise TypeError
+    try: 
+        raise TypeError
+    except TypeError:
+        pass
