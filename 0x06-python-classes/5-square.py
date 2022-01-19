@@ -34,11 +34,12 @@ class Square:
         """my_print print # * self.size the self.size times, if self.size
         is 0 print a new line
         """
-        for i in range(0, self.size):
-            if self.size == 0:
-                print()
-            if 0 < self.size != 0:
-                print("#" * self.size, end="")
-                print()
+        if self.size == 0:
+            print()    
+        else:
+            for i in range(self.size):
+                if 0 < self.size != 0:
+                    print("#" * self.size, end="")
+                    print()
 
             
