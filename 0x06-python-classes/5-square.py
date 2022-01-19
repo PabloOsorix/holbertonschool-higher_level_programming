@@ -40,3 +40,4 @@ class Square:
             if 0 < self.size != 0:
                 print("#" * self.size, end="")
                 print()
+        pass
