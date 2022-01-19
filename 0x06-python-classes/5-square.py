@@ -35,11 +35,9 @@ class Square:
         is 0 print a new line
         """
         if self.size == 0:
-            print()    
+            print()
         else:
             for i in range(self.size):
                 if 0 < self.size != 0:
                     print("#" * self.size, end="")
                     print()
-
-            
