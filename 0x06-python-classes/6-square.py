@@ -36,31 +36,24 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if type(value) is not tuple:
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self._position = value
+        self.__position = value
 
     def area(self):
         """Instanse that return total of the Square are,it's public."""
         return self.size * self.size
 
     def my_print(self):
-        """my_print print # * self.size the self.size times, and print
-        spaces * self.position, if self.size
-        is 0 print a new line
-        """
+
         if self.size == 0:
-            print()
-        if self.position[1] > 0:
             print("")
-            for i in range(self.size):
-                print(" " * self.position[0] ,end="")
-                if 0 < self.size != 0:
-                    print("#" * self.size, end="")
-                    print()
-        else:
-            for i in range(self.size):
-                print(" " * self.position[0] ,end="")
-                if 0 < self.size != 0:
-                    print("#" * self.size, end="")
-                    print()
+            return
+        [print("") for i in range(0, self.position[1])]
+        for i in range(0, self.size):
+            [print(" ", end="") for j in range(0, self.position[0])]
+            [print("#", end="") for k in range(0, self.size)]
+            print("")
