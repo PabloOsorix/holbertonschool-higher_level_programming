@@ -7,6 +7,7 @@ class Rectangle:
     """Rectangle class have instances width, heght, area
     perimeter and __str__/__repr__"""
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
