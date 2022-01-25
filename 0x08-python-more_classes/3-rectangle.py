@@ -53,6 +53,8 @@ class Rectangle:
         str_result = ""
 
         for i in range(self.height):
+            if self.height == 0 or self.width == 0:
+                return str_result
             str_result += "#" * self.width
             if i != self.height - 1:
                 str_result += "\n"
