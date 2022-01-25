@@ -43,7 +43,7 @@ class Rectangle:
         self.__height = value
 
     def perimeter(self):
-        """""public instance method that calculate perimeter 
+        """""public instance method that calculate perimeter
         of the rectangle 2*(width + height)"""
         if self.width == 0 or self.height == 0:
             return 0
@@ -73,6 +73,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """static method that compare areas of different Rectangule object"""
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
