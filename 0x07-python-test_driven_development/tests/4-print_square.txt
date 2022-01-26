@@ -1,0 +1,124 @@
+=========================
+The 4-print_square module
+=========================
+
+Description print_square(size) function
+-----------------------------------------------------------------
+
+Is a function that print # * size times size times.
+
+-----------------------------------------------------------------
+======
+Import
+======
+
+    >>> print_square = __import__('4-print_square').print_square
+
+-----------------------------------------------------------------
+
+====================
+Succes tests section
+====================
+
+output if size is an integer.
+    >>> print_square((5))
+    #####
+    #####
+    #####
+    #####
+    #####
+
+We can use the mathemathical operations because python allowed one argument
+thus in this case python take the result of the operation 2 * 3 = 6. 
+    >>> print_square(2*3)
+    ######
+    ######
+    ######
+    ######
+    ######
+    ######
+
+Division also is allowed
+
+    >>> print_square(12 // 2)
+    ######
+    ######
+    ######
+    ######
+    ######
+    ######
+
+square root also function with this function.
+    
+    >>> print_square(5^2)
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+
+If we send 0 this function does nothing
+
+    >>> print_square(0)
+
+-----------------------------------------------------------------
+=============
+Raise cases
+=============
+
+Size must be and integer.
+    >>> print_square(5.0)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+size can be an string
+
+    >>> print_square("five")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+size can't be float just integer
+
+    >>> print_square(float("nan"))
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+size must be an integer.
+
+    >>> print_square("Hello")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+This function needs at lest one argument in size.
+    
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Even if mathemathical operations are allowed, when we use the / operator
+the result of it operation is a float and the function just allowed integer.
+
+    >>> print_square(12 / 2)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Size argument must be > 0
+
+    >>> print_square(-5)
+    Traceback (most recent call last):
+    ValueError: size must be >=
+
+Size argument must be an integer
+
+    >>> print_square([6])
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Size must be and integer
+    >>> print_square({6})
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+-----------------------------------------------------------------

@@ -1,0 +1,98 @@
+The 0-add_integer module
+======================
+
+Description add_integer(a, b=98) function.
+-------------------
+
+add_integer is a function that sum arg a and b, both of these must be 
+integers otherwise exception will be raised.
+
+-------------------
+Import
+-------------------
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+
+-------------------
+Successful test
+-------------------
+
+Should return the sum of two integers (a, b)
+    >>> add_integer(5, 8)
+    13
+
+In this case de prototype say us that if the user don't input b, b will be equal to 98,
+just if argument a is an integer.
+    
+    >>> add_integer(89,)
+    187
+
+Due to the law of signs if we input a negative integer in a or b argument
+it realice a substraction.
+
+    >>> add_integer(-56,)
+    42
+
+
+Floats are allowed but return (result) of the sum of a and b will be an integer
+
+    >>> add_integer(5.0, 43.5)
+    48
+
+Floats are allowed but return (result) of the sum of a and b will be an integer
+
+    >>> add_integer(65.0, 89)
+    154
+
+Negative floats are allowed but return of the sum of a and b will be an integer
+due to law of signs return could be a negative integer.
+
+    >>> add_integer(-50.5, -60.8)
+    -110
+
+
+
+-------------------
+Raised seccion:
+-------------------
+
+Argument a and b Should be and integer\float otherwise exception TypeError will be raised.
+
+    >>> add_integer("hi", )
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Argument b and a should be an integer\float otherwise exception TypeError will be raised.
+    
+    >>> add_integer(87, "hih")
+    Traceback (most recent call last):
+    TypeError: b must be and integer
+
+
+This function just receives two arguments otherwise exception TypeError 
+will be raiced.
+
+    >>> add_integer(5.0, 43,5)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+This function receives at less one argument in a position 
+otherwise an exception TypeError will be raiced. 
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Arguments should be an integer\float otherwise exception 
+TypeError will be raiced.
+
+    >>> add_integer([12], 56)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Arguments should be an integer\float otherwise exception 
+TypeError will be raiced.
+
+    >>> add_integer((1,2,3,4), 89)
+    Traceback (most recent call last):
+    TypeError: a must be an integer

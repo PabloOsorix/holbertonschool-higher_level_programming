@@ -1,0 +1,179 @@
+============================
+The 2-matrix_divided module
+============================
+
+Description matrix_divided(matrix, div) function.
+---------------------------------------------------
+
+is a function that divides all the elements in the matrix 
+(matrix must be a list of list) between div, div must be an
+integer/float and > that 0.
+-------------------
+Import
+-------------------
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+-------------------------
+Successful test section:
+-------------------------
+
+Matrix is a list of lists of integer or floats and div is an integer/float,
+each element of the lists of list will be divided by div.
+
+    >>> matrix_divided([[1,2,3,4],[5,6,7,8],[9,10,11,12]], 89)
+    [[0.01, 0.02, 0.03, 0.04], [0.06, 0.07, 0.08, 0.09], [0.1, 0.11, 0.12, 0.13]]
+
+Matrix parameter can have floats or integers, matrix can have several
+elements but all of these should have the same lenght.
+
+    >>> matrix_divided([[1,2,3], [4,5,6],[47.6, 56.7, 80.4]], 98)
+    [[0.01, 0.02, 0.03], [0.04, 0.05, 0.06], [0.49, 0.58, 0.82]]
+
+Div parameter can be float or int.
+
+    >>> matrix_divided([[1,2,3], [4,5,6],[47.6, 56.7, 80.4]], 98.67)
+    [[0.01, 0.02, 0.03], [0.04, 0.05, 0.06], [0.48, 0.57, 0.81]]
+
+We can use negative integers or negative floats in the div argument.
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6],[47.6, 56.7, 80.4]], -98.67)
+    [[-0.01, -0.02, -0.03], [-0.04, -0.05, -0.06], [-0.48, -0.57, -0.81]]
+
+
+We can use negative integers/floats in the elements (lists) of the matrix (list),
+but for the law of signs the result could be a substraction.
+    
+    >>> matrix_divided([[1, 2,-3], [4,-5, 6], [47.6, -56.7, 80.4]], -98.67)
+    [[-0.01, -0.02, 0.03], [-0.04, 0.05, -0.06], [-0.48, 0.57, -0.81]]
+
+If we use a float("nan") it take it like a nan and prits nan.
+
+    >>> matrix_divided([[1,2,3], [3,4,float("nan")]], 98)
+    [[0.01, 0.02, 0.03], [0.03, 0.04, nan]]
+
+If div is nan number
+
+    >>> matrix_divided([[1,2,3], [3,4,5]], float("nan"))
+    [[nan, nan, nan], [nan, nan, nan]]
+
+This convert all to 0 if div is equal to float('inf')
+
+    >>> matrix_divided([[1, 2,-3], [4,-5, 6],[47.6, -56.7, 80.4]], float('inf'))
+    [[0.0, 0.0, -0.0], [0.0, -0.0, 0.0], [0.0, -0.0, 0.0]]
+
+function recognize the inf number in the matrix.
+
+    >>> matrix_divided([[1, 2,-3], [4,-5, float('inf')],[47.6, -56.7, 80.4]], 87)
+    [[0.01, 0.02, -0.03], [0.05, -0.06, inf], [0.55, -0.65, 0.92]]
+
+Mathematical operations are allowed inside of the Array.
+
+    >>> matrix_divided([[1, 2 + 5, 16 / (-3)], [4,-5, 8 * 9],[47.6,51.6 - (-56.7), 80.4]], 87)
+    [[0.01, 0.08, -0.06], [0.05, -0.06, 0.83], [0.55, 1.24, 0.92]]
+
+
+-------------------
+Raised seccion:
+-------------------
+
+The lenght of the lists of the list matrix should be the same size,
+otherwise an exception TypeError will be raice.
+
+    >>> matrix_divided([[1,2,3], [4,5,6],[47.6, 56.7, 80.4, 67]], 98.67)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+
+The type of the matrix should be a list of list, otherwise an 
+exception TypeError will be raiced.
+
+    >>> matrix_divided(([1,2,3], [4,5,6],[47.6, 56.7, 80.4, 67]), 98.67)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+You have to write correctly the syntax of the matrix, otherwise
+an exception SyntaxError will be raiced.
+
+    >>> matrix_divided([[1,2,-3], [4,-5,6],"[hello", "how are", "you"]], -98.67)
+    Traceback (most recent call last):
+    SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
+
+The type of the matrix should be a list of list, otherwise an 
+exception TypeError will be raiced.
+
+    >>> matrix_divided([[1,2,-3], [4,-5,6], ["hello", "how are", "you"]], -98.67)
+    Traceback (most recent call last): 
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Matrix parameter should be a list of lists otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided([1, 2, 3], -98.67)
+    Traceback (most recent call last):
+    TypeError: object of type 'int' has no len()
+
+Matrix parameter should be a list of lists otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided("Hello", -98.67)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix parameter should be a list of lists otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided(12345, -98.67)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix parameter should be a list of lists otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided({"Hola": [1,2,-3], "Como": [4,-5,6], "estas": [47.6, -56.7, 80.4]}, -50)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Div parameter should be an integer or float otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided([[1,2,-3], [4,-5,6],[47.6, -56.7, 80.4]], "Hello")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Div parameter should be an integer or float otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided([[1,2,-3], [4,-5,6],[47.6, -56.7, 80.4]], (-98, 67))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Div parameter should be an integer or float otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided([[1,2,-3], [4,-5,6],[47.6, -56.7, 80.4]], ("Hello"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Div parameter should be an integer or float otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided([[1,2,-3], [4,-5,6],[47.6, -56.7, 80.4]], "Hello")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Div parameter should be an integer or float otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided([[1,2,-3], [4,-5,6],[47.6, -56.7, 80.4]], [-98])
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Div parameter should be an integer or float otherwise an except TypeError
+will be raiced.
+
+    >>> matrix_divided([[1,2,-3], [4,-5,6],[47.6, -56.7, 80.4]], {"hello": [95]})
+    Traceback (most recent call last):
+    TypeError: div must be a number

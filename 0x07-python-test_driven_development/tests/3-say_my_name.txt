@@ -1,0 +1,81 @@
+=========================
+The 3-say_my_name module
+=========================
+
+Description say_my_name(first_name, last_name="") function.
+
+=============================================================
+
+This function receive two args: first_name and last_name
+both strings and return justo one string with both strings
+together.
+
+-------------------------------------------------------------
+========
+ Import 
+========
+    
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+-------------------------------------------------------------
+======================
+ Succes test section  
+======================
+
+Both args (first_name and last_name) should be strings.
+    
+    >>> say_my_name("Gwen", "Staicy")
+    My name is Gwen Staicy
+
+Function waits at less args (first_name), last_name is not necessary.
+    >>> say_my_name("Gwen")
+    My name is Gwen 
+
+This Syntax is allowed as it is still a string.
+    >>> say_my_name(("Gwen"), "staicy")
+    My name is Gwen staicy
+
+
+-------------------------------------------------------------
+===========
+Raise cases
+===========
+
+Both arguments (first_name, last_name) should be a string
+    
+    >>> say_my_name("Gwen", 98)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Both arguments (first_name, last_name) should be a string
+    >>> say_my_name("Gwen", ["Staicy"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Both arguments (first_name, last_name) should be a string
+
+    >>> say_my_name(74567, 987)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Both arguments (first_name, last_name) should be a string
+
+    >>> say_my_name(("HEILY", "PEREZ"), )
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Both arguments (first_name, last_name) should be a string
+
+    >>> say_my_name(("HEILY", "PEREZ"), ["Honda"])
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Ths fuction just take two argumets.
+
+    >>> say_my_name('a','i','o', "Lalo")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 4 were given
+
+
+-------------------------------------------------------------

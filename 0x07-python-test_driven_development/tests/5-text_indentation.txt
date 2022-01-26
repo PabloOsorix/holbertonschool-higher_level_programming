@@ -1,0 +1,123 @@
+=====================================
+The  module 5-text_indentation module 
+=====================================
+
+Description text_indentation(text) function
+-----------------------------------------------------------------
+
+This function add two new - new lines each time that text contain
+a character "." ":" or "?"
+
+-----------------------------------------------------------------
+======
+Import
+======
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+-----------------------------------------------------------------
+
+====================
+Succes tests section
+====================
+
+print in case that we pase a text two .. (dots) in a row.
+
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.. Quonam modo?""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    Quonam modo?
+
+if out argument text is an empty string it does nothing.
+
+    >>> text_indentation("""""")
+
+
+if not match with the characters "." "," "?" it print the same string.
+>>> text_indentation("a")
+a
+
+    >>> text_indentation("a.:?")
+    a.
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+
+String of numbers.
+    >>> text_indentation("54654.3")
+    54654.
+    <BLANKLINE>
+    3
+
+String with special characters
+    >>> text_indentation("\../'\'")
+    \.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    /''
+
+Mathemathical operations are allowed just if the result are a string.
+
+    >>> text_indentation(2 * "a.: ?")
+    a.
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    a.
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+
+Success case where text is a tring.
+
+    >>> text_indentation("Hello: Peter")
+    Hello:
+    <BLANKLINE>
+    Peter
+
+-----------------------------------------------------------------
+=============
+Raise cases
+=============
+
+This funtion need at less one argument to work
+
+    text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+argument text must be a string.
+
+    >>> text_indentation(["54654.3"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Argumnt text must be a string.
+
+    >>> text_indentation(548456)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Argument text must be a string.
+
+    >>> text_indentation(54.00)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Argument text must be a string.
+
+    >>> text_indentation({"""dfas.fds"""})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+
+-----------------------------------------------------------------
