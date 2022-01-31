@@ -41,14 +41,15 @@ class Square:
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        self.position = value
 
     def area(self):
         """Instanse that return total of the Square are,it's public."""
         return self.size * self.size
 
     def my_print(self):
-
+        """my_print print # * self.size the self.size times, 
+        and print spaces * self.position, if self.size is 0 print a new line"""
         if self.size == 0:
             print("")
             return
