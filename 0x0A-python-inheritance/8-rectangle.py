@@ -4,7 +4,7 @@
 """Module contains class BaseGeometry"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """class that raises an Exception with
     the message area() is not implemented"""
     def area(self):
