@@ -48,12 +48,9 @@ class Rectangle(BaseGeometry):
 """Module that contains Square class"""
 
 
-class Square (Rectangle):
-    """Class that defines Square"""
+class Square(Rectangle):
+    """class with iinherits from Rectangle"""
     def __init__(self, size):
         self.integer_validator("size", size)
-        self.__size = size
         super().__init__(size, size)
-
-    def area(self):
-        return(self.__size * self.__size)
+        self.__size = size
