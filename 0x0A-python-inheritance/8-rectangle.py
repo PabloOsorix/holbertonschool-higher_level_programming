@@ -4,7 +4,7 @@
 """Module contains class BaseGeometry"""
 
 
-class BaseGeometry():
+class BaseGeometry:
     """class that raises an Exception with
     the message area() is not implemented"""
     def area(self):
@@ -27,7 +27,6 @@ class BaseGeometry():
 
 class Rectangle(BaseGeometry):
     """Class with inherits from class BaseGeometry"""
-
     def __init__(self, width, height):
         super().__init__()
         self.integer_validator("width", width)
