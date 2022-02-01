@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-Square = __import__('10-square').Square
-
 
 """Module that contains Square class"""
+
+
+Square = __import__('10-square').Square
 
 
 class Square(Rectangle):
