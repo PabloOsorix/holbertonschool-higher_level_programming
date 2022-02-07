@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 
-from re import I
 import unittest
 from models.base import Base
 
