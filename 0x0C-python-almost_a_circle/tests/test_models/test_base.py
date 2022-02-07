@@ -4,6 +4,8 @@
 import unittest
 from models.base import Base
 
+"""module to test Base class"""
+
 
 class Test_BaseClass(unittest.TestCase):
 
