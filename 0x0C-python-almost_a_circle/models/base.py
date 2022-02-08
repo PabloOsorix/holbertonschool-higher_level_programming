@@ -43,17 +43,18 @@ class Base:
             return tmp
         return new_list
 
+  
     @classmethod
     def save_to_file(cls, list_objs):
         """Method that convert parameter list_object
         to json an save it content in a file.json"""
-        if list_objs:
-            my_list = []
+        filename = str(cls.__name__)+".json"
+        my_list = []
+        if list_objs is not None:
             for i in range(len(list_objs)):
                 my_list.append(cls.to_dictionary(list_objs[i]))
-            with open("{}.json".format(cls.__name__),
-                      mode="w", encoding="utf8") as file:
-                file.write(cls.to_json_string(my_list))
+        with open(filename, mode="w", encoding="utf-8") as my_file:
+            my_file.write(cls.to_json_string(my_list))
 
     @classmethod
     def create(cls, **dictionary):
