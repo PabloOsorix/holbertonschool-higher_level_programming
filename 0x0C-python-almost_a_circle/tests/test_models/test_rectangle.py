@@ -3,6 +3,9 @@ import unittest
 from models.rectangle import Rectangle
 from models.base import Base
 
+"""module to test class Rectangle"""
+
+
 class Test_RectangleClass(unittest.TestCase):
 
     def test_id(self):

@@ -6,6 +6,10 @@ from models.base import Base
 from models.rectangle import Rectangle
 import os
 
+<<<<<<< HEAD
+=======
+"""Module to test square class"""
+>>>>>>> c4a5b3190547118456df24a34ed64dcb61472e01
 
 
 class Test_RectangleClass(unittest.TestCase):
