@@ -43,7 +43,6 @@ class Base:
             return tmp
         return new_list
 
-  
     @classmethod
     def save_to_file(cls, list_objs):
         """Method that convert parameter list_object
