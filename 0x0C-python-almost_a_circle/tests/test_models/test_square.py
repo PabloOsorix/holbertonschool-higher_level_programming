@@ -6,6 +6,8 @@ from models.base import Base
 from models.rectangle import Rectangle
 import os
 
+
+
 class Test_RectangleClass(unittest.TestCase):
 
     def test_setter(self):
