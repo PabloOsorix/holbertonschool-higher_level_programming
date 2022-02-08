@@ -27,9 +27,9 @@ class Base:
         """Static method that convert parameter list_dictionary
         to a json object."""
         string_json = []
-        if list_dictionaries:
-            string_json = json.dumps(list_dictionaries)
+        if list_dictionaries is None:
             return string_json
+        string_json = json.dumps(list_dictionaries)
         return string_json
 
     @staticmethod
