@@ -26,11 +26,9 @@ class Base:
     def to_json_string(list_dictionaries):
         """Static method that convert parameter list_dictionary
         to a json object."""
-        string_json = []
         if list_dictionaries is None:
-            return string_json
-        string_json = json.dumps(list_dictionaries)
-        return string_json
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
