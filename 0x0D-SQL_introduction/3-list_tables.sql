@@ -1,2 +1,2 @@
-/*script that list tables of a basedata*/
+-- script that list tables of a basedata.
 SHOW TABLES;
