@@ -7,5 +7,6 @@ if (!argv[2]) {
 } else {
   for (let i = 2; argv[i] != null; i++) {
     console.log(argv[i]);
+    break;
   }
 }
