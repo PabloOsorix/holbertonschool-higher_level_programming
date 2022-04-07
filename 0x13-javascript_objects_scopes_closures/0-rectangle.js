@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//Script that defines an empty class Rectangle.
+//  Script that defines an empty class Rectangle.
 
 class Rectangle {
 
