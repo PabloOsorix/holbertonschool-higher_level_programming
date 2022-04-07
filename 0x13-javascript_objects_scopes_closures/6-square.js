@@ -1,7 +1,7 @@
 #!/usr/bin/node
 //  add method charPrint to Square class.
-const SquareOne = require('./5-square');
-class Square extends SquareOne {
+const squareOne = require('./5-square');
+class Square extends squareOne {
   charPrint (c) {
     if (!c) {
       c = 'X';
