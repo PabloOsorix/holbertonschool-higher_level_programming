@@ -1,13 +1,15 @@
 #!/usr/bin/node
 //  add method charPrint to Square class.
-const Rectangle = require('./4-rectangle');
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
-
+const SquareOne = require('./5-square');
+class Square extends SquareOne {
   charPrint (c) {
-    this.print(c);
+    if (!c) {
+      c = 'X';
+    }
+
+    for (let i = 0; i < this.height; i++) {
+      console.log(c.repeat(this.width));
+    }
   }
 }
 module.exports = Square;
