@@ -18,10 +18,6 @@ if __name__ == "__main__":
         WHERE state_id= (SELECT id FROM states WHERE name= %(state_name)s) \
             ORDER BY cities.id ASC", {'state_name': argv[4]})
     obj = cursor.fetchall()
-    for cities in range(len(obj)):
-        if cities + 1 != len(obj):
-            print(f"%s, " % (obj[cities]), end=" ")
-            continue
-        print(f"%s" % (obj[cities]))
+    print(", ".join(city[0] for city in obj))
     cursor.close()
     db.close()
