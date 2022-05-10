@@ -14,6 +14,8 @@ if __name__ == "__main__":
     cursor.execute("SELECT * FROM states WHERE name = %(user_input)s",
                    {'user_input': argv[4]})
 
-    print(cursor.fetchone())
+    for states in cursor.fetchall():
+        if states[1] == argv[4]:
+            print(states)
     cursor.close()
     db.close()
