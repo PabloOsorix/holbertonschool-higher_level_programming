@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-Scrirpt that prnts the fisrt State
-ibject from the database hbtn_0e_6_usa
+Script that prints the fisrt State
+object from the database hbtn_0e_6_usa
 """
 
+import sqlalchemy
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)
