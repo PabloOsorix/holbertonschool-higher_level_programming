@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-Script that prints the State object id
-of a given name in the terminal (prompt)
+script that adds the State object
+“Louisiana” to the database
+hbtn_0e_6_usa
 """
 
 from model_state import Base, State
