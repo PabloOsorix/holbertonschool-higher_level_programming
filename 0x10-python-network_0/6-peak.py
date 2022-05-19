@@ -24,5 +24,6 @@ def find_peak(list_of_integers):
                 greather = i
         return greather
 
+
 if __name__ == "__main__":
     find_peak()
