@@ -11,7 +11,7 @@ if __name__ == "__main__":
     if argv[1] is not None:
         letter = {"q": argv[1]}
     else:
-        letter = ""
+        letter = {"q": ""}
 
     req = requests.post("http://0.0.0.0:5000/search_user",
                         data=letter).json()
