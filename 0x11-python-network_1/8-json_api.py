@@ -8,7 +8,7 @@ import requests
 
 
 if __name__ == "__main__":
-    if argv[1]:
+    if len(argv[1]) > 1:
         letter = {"q": argv[1]}
     else:
         letter = {"q": ""}
