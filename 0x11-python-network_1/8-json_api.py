@@ -3,12 +3,12 @@
 Script that displays the body of the
 given response
 """
-from sys import argv
+import sys
 import requests
 
 
 if __name__ == "__main__":
-    letter = {"q": ""} if len(argv) == 1 else {"q": argv[1]}
+    letter = {"q": ""} if len(sys.argv) == 1 else {"q": sys.argv[1]}
 
     req = requests.post("http://0.0.0.0:5000/search_user",
                         data=letter).json()
