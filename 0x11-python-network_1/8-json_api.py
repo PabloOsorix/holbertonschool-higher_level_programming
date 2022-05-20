@@ -13,7 +13,7 @@ if __name__ == "__main__":
     else:
         letter = ""
 
-    req = requests.post("http://172.17.0.2:5000/search_user",
+    req = requests.post("http://0.0.0.0:5000/search_user",
                         data=letter).json()
     try:
         if req == {}:
