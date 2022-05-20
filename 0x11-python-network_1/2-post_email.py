@@ -4,16 +4,16 @@ Script that send a variable email
 in a POST request.
 """
 import sys
-import urllib.request
 import urllib.parse
+import urllib.request
 
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    email = {'email': sys.argv[2]}
-    data = urllib.parse.urlenconde(email).encode('ascii')
+    value = {"email": sys.argv[2]}
+    data = urllib.parse.urlenconde(value).encode("ascii")
     req = urllib.request.Request(url, data)
 
     with urllib.request.urlopen(req) as response:
-        response = response.read().decode('utf-8')
-    print(response)
+        body_r = response.read().decode('utf-8')
+    print(body_r)
