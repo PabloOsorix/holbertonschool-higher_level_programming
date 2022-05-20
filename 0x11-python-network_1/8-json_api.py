@@ -8,10 +8,7 @@ import requests
 
 
 if __name__ == "__main__":
-    if len(argv[1]) == 1:
-        letter = {"q": ""}
-    else:
-        letter = {"q": argv[1]}
+    letter = {"q": ""} if len(argv) == 1 else {"q": argv[1]}
 
     req = requests.post("http://0.0.0.0:5000/search_user",
                         data=letter).json()
