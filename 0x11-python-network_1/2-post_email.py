@@ -5,13 +5,15 @@ in a POST request.
 """
 import sys
 import urllib.request
+import urllib.parse
 
 
 if __name__ == "__main__":
+    url = sys.argv[1]
     email = {'email': sys.argv[2]}
-    data = urllib.parse.urlenconde(email)
-    data = data.encode('utf-8')
-    with urllib.request.urlopen(sys.argv[1], data) as response:
-        response = response.read().decode('utf-8')
+    data = urllib.parse.urlenconde(email).encode('ascii')
+    req = urllib.request.Request(url, data)
 
+    with urllib.request.urlopen(url, data) as response:
+        response = response.read().decode('utf-8')
     print(response)
