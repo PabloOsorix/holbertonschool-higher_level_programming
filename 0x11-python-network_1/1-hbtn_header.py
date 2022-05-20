@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that obtain the 
+script that obtain the
 X-Request from a response
 """
 import sys
