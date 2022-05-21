@@ -11,9 +11,9 @@ if __name__ == "__main__":
     counter = 0
     repo = argv[1]
     owner = argv[2]
-    req = requests.get("https://api.github.com/repos/{}/{}/commits"
-                       .format(repo, owner))
+    url = "https://api.github.com/repos/{}/{}/commits".format(repo, owner)
 
+    req = requests.get(url)
     req = req.json()
     try:
         for index in range(10):
